@@ -5,13 +5,16 @@ import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { BrowserRouter } from 'react-router-dom'
 import { UserProvider } from './Context/UserContext'
+import { PlayerProvider } from './Context/PlayerContext'
 
 ReactDOM.render(
   <React.StrictMode>
     <UserProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <PlayerProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </PlayerProvider>
     </UserProvider>
   </React.StrictMode>,
   document.getElementById('root')
