@@ -40,3 +40,9 @@
     color: #242424;
     transition: all 0.3s ease-out;
 }
+
+.btn-align{
+    height: 80px;
+    display: grid;
+    align-items: center;
+}

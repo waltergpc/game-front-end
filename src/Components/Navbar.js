@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Button } from './Button'
+
 import './Navbar.css'
 
 export const Navbar = ({ children }) => {
@@ -22,27 +23,18 @@ export const Navbar = ({ children }) => {
 
   return (
     <>
-      <nav className='navbar'>
+      <nav id='Navbar' className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo'>
+          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             Universe Gods <i className='fas fa-globe-americas' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+          <ul className={click ? 'nav-menu active' : 'nav-menu'} onClick={closeMobileMenu}>
             <li className='nav-item'>
               <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
                 Home
-              </Link>
-            </li>
-            <li className='nav-item'>
-              <Link
-                to='/sign-in'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                Sign-In
               </Link>
             </li>
             <li className='nav-item'>
@@ -59,8 +51,8 @@ export const Navbar = ({ children }) => {
                 About
               </Link>
             </li>
+                <Button buttonStyle='btn--outline' onClick={closeMobileMenu} >Sign-In</Button>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>Sign-In</Button>}
         </div>
       </nav>
       <main>{children}</main>
