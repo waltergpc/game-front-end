@@ -5,15 +5,19 @@ import NotFound from './Pages/NotFound'
 import Players from './Pages/Players'
 import SignIn from './Pages/SignIn'
 import { Home } from './Pages/Home'
+import Dashboard from './Pages/Dashboard'
+import UpdateUser from './Pages/UpdateUser'
 
 function App() {
   return (
     <Navbar>
       <Routes>
-        <Route path='/' element={<About />} />
-        <Route path='/home' element={<Home />} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
         <Route path='/sign-in' element={<SignIn />} />
         <Route path='/players' element={<Players />} />
+        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/update-user' element={<UpdateUser />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
     </Navbar>

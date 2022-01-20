@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
               <Link to='/'>About Game</Link>
             </li>
             <li>
-              <Link to='/sign-in'>Sign-in</Link>
+              <Link to='/sign-in'>sssign-in</Link>
             </li>
           </ul>
         </nav>

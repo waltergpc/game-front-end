@@ -9,13 +9,13 @@ import { PlayerProvider } from './Context/PlayerContext'
 
 ReactDOM.render(
   <React.StrictMode>
-    <UserProvider>
-      <PlayerProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+      <UserProvider>
+        <PlayerProvider>
           <App />
-        </BrowserRouter>
-      </PlayerProvider>
-    </UserProvider>
+        </PlayerProvider>
+      </UserProvider>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 )

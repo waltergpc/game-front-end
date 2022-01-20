@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 
 const SearchBar = ({ setPage, setSearchUrl }) => {
   const [query, setQuery] = useState({ nickname: '', status: 'All' })
-  const [queryId, setQueryId] = useState('')
-
-  console.log(query)
 
   const handleQueryChange = (e) => {
     setQuery({ ...query, [e.target.name]: e.target.value })
@@ -14,21 +11,15 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
     e.preventDefault()
     let url = 'http://localhost:5000/api/players/search?'
     if (query.nickname && query.status === 'All') {
-      url = `${url}nicknameValue=${query.nickname}`
+      url = `${url}value=${query.nickname}`
     }
     if (query.status !== 'All' && !query.nickname) {
       url = `${url}status=${query.status}`
     }
     if (query.status !== 'All' && query.nickname) {
-      url = `${url}nicknameValue=${query.nickname}&status=${query.status}`
+      url = `${url}value=${query.nickname}&status=${query.status}`
     }
     setSearchUrl(url)
-    setPage(1)
-  }
-
-  const handleIdSubmit = (e) => {
-    e.preventDefault()
-    setSearchUrl(`http://localhost:5000/api/players/search?id=${queryId}`)
     setPage(1)
   }
 
@@ -63,19 +54,6 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
           onChange={handleQueryChange}
         />
         <button id='submit-query-btn' type='submit'>
-          Search
-        </button>
-      </form>
-      <form id='search-id-form' onSubmit={handleIdSubmit}>
-        <input
-          type='text'
-          placeholder='Search by specific id'
-          id='id-input'
-          name='id'
-          value={queryId}
-          onChange={(e) => setQueryId(e.target.value)}
-        />
-        <button id='submit-id-btn' type='submit'>
           Search
         </button>
       </form>
