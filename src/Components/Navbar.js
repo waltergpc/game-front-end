@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { useUser } from '../Context/UserContext'
 import { Button } from './Button'
 
 import './Navbar.css'
@@ -7,6 +8,8 @@ import './Navbar.css'
 export const Navbar = ({ children }) => {
   const [click, setClick] = useState(false)
   const [button, setButton] = useState(true)
+
+  const { user } = useUser()
 
   const handleClick = () => setClick(!click)
   const closeMobileMenu = () => setClick(false)
@@ -31,9 +34,12 @@ export const Navbar = ({ children }) => {
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'} onClick={closeMobileMenu}>
+          <ul
+            className={click ? 'nav-menu active' : 'nav-menu'}
+            onClick={closeMobileMenu}
+          >
             <li className='nav-item'>
-              <Link to='/home' className='nav-links' onClick={closeMobileMenu}>
+              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                 Home
               </Link>
             </li>
@@ -51,7 +57,29 @@ export const Navbar = ({ children }) => {
                 About
               </Link>
             </li>
-                <Button buttonStyle='btn--outline' onClick={closeMobileMenu} >Sign-In</Button>
+            <li className='nav-item'>
+              <Link
+                to='/players'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Players
+              </Link>
+            </li>
+            {user && (
+              <li className='nav-item'>
+                <Link
+                  to='/dashboard'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+                >
+                  My hero
+                </Link>
+              </li>
+            )}
+            <Button buttonStyle='btn--outline' onClick={closeMobileMenu}>
+              {!user ? 'Sign-In' : 'Logout'}
+            </Button>
           </ul>
         </div>
       </nav>

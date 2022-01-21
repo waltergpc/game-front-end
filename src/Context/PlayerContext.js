@@ -22,7 +22,7 @@ export const PlayerProvider = ({ children }) => {
   }
 
   const fetchPlayers = async (page) => {
-    setLoading(true)
+    setLoading()
     try {
       const { data } = await axios.get(
         `http://localhost:5000/api/players?page=${page}`
@@ -30,7 +30,7 @@ export const PlayerProvider = ({ children }) => {
       dispatch({ type: 'FETCH_PLAYERS', payload: data })
       console.log(data)
     } catch (error) {
-      console.log(error.response)
+      console.log(error)
       dispatch({
         type: 'FETCH_PLAYERS_ERROR',
         payload: error.response.data.msg,
@@ -48,6 +48,10 @@ export const PlayerProvider = ({ children }) => {
       console.log(data)
     } catch (error) {
       console.log(error.response)
+      dispatch({
+        type: 'FETCH_PLAYERS_ERROR',
+        payload: error.response.data.msg,
+      })
     }
   }
 

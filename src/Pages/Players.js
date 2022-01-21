@@ -30,15 +30,15 @@ const Players = () => {
 
   if (isPlayersLoading) return <pre>Loading...</pre>
 
+  const resetPlayers = () => {
+    setSearchUrl(null)
+    setPage(1)
+  }
+
   return (
     <section>
       <h3>Players</h3>
-      <button
-        type='button'
-        onClick={() => {
-          setSearchUrl(null)
-        }}
-      >
+      <button type='button' onClick={resetPlayers}>
         Back to All Players
       </button>
       <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
