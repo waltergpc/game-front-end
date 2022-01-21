@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Questrial&family=Raleway:wght@300&display=swap');
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+.about-section{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+}
+.about-container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.about-content-section{
+    float: left;
+    width: 55%;
+    padding-right: 30px;
+}
+
+.image-section {
+    float: right;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.image-section img{
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+}
+.about-content-section .title{
+    text-transform: uppercase;
+    font-size: 28px;
+}
+.about-content-section .about-content h4{
+    margin-top: 20px;
+    font-size: 27px;
+}
+.about-content-section .about-content p{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+@media screen and (max-width: 960px) {
+    .about-container{
+    width: 80%;
+    display: block;
+    margin: auto;
+    padding-top: 50px;
+    }
+    .about-content-section{
+    float: none;
+    width: 100%;
+    display: block;
+    margin: auto;
+    }
+    .image-section {
+    padding-top: 25px;
+    float: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    }
+    .image-section img{
+    width: 80%;
+    height: auto;
+    }
+    .about-content-section .title h1{
+    text-align: center;
+    font-size: 35px;
+    font-weight: bolder;
+    }
+    .about-content-section .about-content p{
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 1.5;
+    text-align: justify;
+}
+}
