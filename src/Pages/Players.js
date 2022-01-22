@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import Loading from '../Components/Loading'
 import Pagination from '../Components/Pagination'
 import SearchBar from '../Components/SearchBar'
 import { usePlayers } from '../Context/PlayerContext'
@@ -28,7 +29,7 @@ const Players = () => {
     //eslint-disable-next-line
   }, [page, searchUrl])
 
-  if (isPlayersLoading) return <pre>Loading...</pre>
+  if (isPlayersLoading) return <Loading />
 
   const resetPlayers = () => {
     setSearchUrl(null)
@@ -51,9 +52,27 @@ const Players = () => {
         setMinPageNumberLimit={setMinPageNumberLimit}
         changePage={setPage}
       />
-      {errorMsg && <section>{errorMsg}</section>}
+      {errorMsg && <section className='error-msg'>{errorMsg}</section>}
       {players.map((player) => {
-        return <article key={player._id}>{player.nickname}</article>
+        const {
+          _id: playerId,
+          nickname,
+          name,
+          status,
+          ranking,
+          avatar,
+        } = player
+        return (
+          <article key={playerId}>
+            <div>{nickname}</div>
+            <div>{name}</div>
+            <div>{ranking}</div>
+            <div>{status}</div>
+            <div>
+              <img src={avatar} alt={nickname} />
+            </div>
+          </article>
+        )
       })}
 
       <div></div>

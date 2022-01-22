@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+import Loading from '../Components/Loading'
 import { useUser } from '../Context/UserContext'
 
 const SignIn = () => {
-  const { register, login, errorMsg } = useUser()
+  const { register, login, errorMsg, userLoading } = useUser()
   const [showLogin, setShowLogin] = useState(true)
   const [newUser, setNewUser] = useState({
     nickname: '',
@@ -33,10 +34,12 @@ const SignIn = () => {
     setNewUser({ name: '', nickname: '', password: '' })
   }
 
+  if (userLoading) return <Loading />
+
   return (
     <section>
       <h3>{showLogin ? 'Login' : 'Register'}</h3>
-      {errorMsg && <div>{errorMsg}</div>}
+      {errorMsg && <div className='error-section'>{errorMsg}</div>}
       {passwordError && <div>{passwordError}</div>}
       <p>
         {showLogin
