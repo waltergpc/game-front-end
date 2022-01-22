@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useUser } from '../Context/UserContext'
 import { Navigate, Link } from 'react-router-dom'
 import AvatarSelect from '../Components/AvatarSelect'
+import Loading from '../Components/Loading'
 
 const UpdateUser = () => {
   const [updatedUser, setUpdatedUser] = useState({
@@ -28,7 +29,7 @@ const UpdateUser = () => {
 
   if (!user) return <Navigate to='/home' />
 
-  if (userLoading) return <pre>Loading...</pre>
+  if (userLoading) return <Loading />
 
   const handleChange = (e) => {
     setUpdatedUser({ ...updatedUser, [e.target.name]: e.target.value })
@@ -41,7 +42,7 @@ const UpdateUser = () => {
 
   return (
     <section>
-      {updateMessage && <h5>{updateMessage}</h5>}
+      {updateMessage && <div className='success-msg'>{updateMessage}</div>}
       <form id='update-from' onSubmit={handleSubmit}>
         <input
           type='text'

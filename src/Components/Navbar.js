@@ -44,11 +44,7 @@ export const Navbar = ({ children }) => {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link
-                to='/halloffame'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
+              <Link to='/hof' className='nav-links' onClick={closeMobileMenu}>
                 Hall of Fame
               </Link>
             </li>
