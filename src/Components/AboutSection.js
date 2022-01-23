@@ -1,5 +1,5 @@
 import React from 'react'
-import UniverseGods4 from '../Images/UniverseGods4.jpg'
+import UniverseGods4 from '../images/UniverseGods4.jpg'
 
 import './AboutSection.css'
 
