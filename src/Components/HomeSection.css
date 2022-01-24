@@ -1,5 +1,6 @@
+
 .home-container {
-  background-image: url('../Images/UniverseGods2.jpg');
+  background-image: url('../images/UniverseGods2.jpg');
   background-repeat: no-repeat;
   background-position-x: center;
   background-size: cover;
@@ -18,7 +19,6 @@
   text-align: center;
   color: #fff;
   font-size: 100px;
-  margin-top: -100px;
 }
 
 .home-container > p {

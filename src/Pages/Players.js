@@ -37,8 +37,8 @@ const Players = () => {
   }
 
   return (
-    <section>
-      <h3>Players</h3>
+  
+    <div className='players-container'>
       <button type='button' onClick={resetPlayers}>
         Back to All Players
       </button>
@@ -74,9 +74,7 @@ const Players = () => {
           </article>
         )
       })}
-
-      <div></div>
-    </section>
+    </div>
   )
 }
 
