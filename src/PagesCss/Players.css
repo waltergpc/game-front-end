@@ -1,8 +1,38 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.players-container{
+.player-container{
     height: 100vh;
     width: 100%;
+    background-color: aqua;
+    padding-top: 70px;
+    
+}
+.player-lil-container{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+.button-all-players-container{
+    padding: 20px;
+}
+.button-all-players{
+    width: 40vh;
+    display: flex;
+    justify-content:center;
+    border-radius: 2rem;
+    border: none;
+    cursor: pointer;
+}
+.specs-profile{
+    background-color: pink;
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+}
+.image-profile{
+    height: 50px;
 }

@@ -4,6 +4,8 @@ import Pagination from '../Components/Pagination'
 import SearchBar from '../Components/SearchBar'
 import { usePlayers } from '../Context/PlayerContext'
 
+import '../PagesCss/Players.css'
+
 const Players = () => {
   const {
     fetchPlayers,
@@ -38,42 +40,50 @@ const Players = () => {
 
   return (
   
-    <div className='players-container'>
-      <button type='button' onClick={resetPlayers}>
-        Back to All Players
-      </button>
-      <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
-      <Pagination
-        totalCount={totalCount}
-        page={page}
-        maxPageNumberLimit={maxPageNumberLimit}
-        minPageNumberLimit={minPageNumberLimit}
-        setMaxPageNumberLimit={setMaxPageNumberLimit}
-        setMinPageNumberLimit={setMinPageNumberLimit}
-        changePage={setPage}
-      />
-      {errorMsg && <section className='error-msg'>{errorMsg}</section>}
-      {players.map((player) => {
-        const {
-          _id: playerId,
-          nickname,
-          name,
-          status,
-          ranking,
-          avatar,
-        } = player
-        return (
-          <article key={playerId}>
-            <div>{nickname}</div>
-            <div>{name}</div>
-            <div>{ranking}</div>
-            <div>{status}</div>
-            <div>
-              <img src={avatar} alt={nickname} />
+    <div className='player-container'>
+      <div className='player-lil-container'>
+        <div className='button-all-players-container'>
+          <button className='button-all-players' type='button' onClick={resetPlayers}>
+            Back to All Players
+          </button>
+        </div>
+        <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
+        <Pagination
+          totalCount={totalCount}
+          page={page}
+          maxPageNumberLimit={maxPageNumberLimit}
+          minPageNumberLimit={minPageNumberLimit}
+          setMaxPageNumberLimit={setMaxPageNumberLimit}
+          setMinPageNumberLimit={setMinPageNumberLimit}
+          changePage={setPage}
+        />
+        {errorMsg && <section className='error-msg'>{errorMsg}</section>}
+        {players.map((player) => {
+          const {
+            _id: playerId,
+            nickname,
+            name,
+            status,
+            ranking,
+            avatar,
+          } = player
+          return (
+            <div className='specs-profile'>
+              <article key={playerId}>
+                <div>{nickname}</div>
+                <div>{name}</div>
+                <div>{ranking}</div>
+                <div>{status}</div>
+                <img 
+                  className='image-profile' 
+                  src={avatar} 
+                  alt={nickname} 
+                />
+              </article>
             </div>
-          </article>
-        )
-      })}
+          )
+        })}
+      </div>
     </div>
   )
 }
