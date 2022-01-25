@@ -7,28 +7,32 @@
 }
 
 .about-section{
+    display: grid;
     width: 100%;
     min-height: 100vh;
     background-color: #fff;
 }
 .about-container{
     width: 80%;
-    display: block;
     margin: auto;
-    padding-top: 100px;
+    display: flex;
+    flex-direction: row;
 }
 
 .about-content-section{
     float: left;
-    width: 55%;
+    width: 50%;
     padding-right: 30px;
+    margin-top: 20vh;
 }
 
 .image-section {
     float: right;
-    width: 45%;
+    width: 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
 .image-section img{
@@ -52,24 +56,31 @@
 }
 
 @media screen and (max-width: 960px) {
+    .about-section{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #fff;
+    display: flex;
+    justify-content: center;
+    }
     .about-container{
-    width: 80%;
+    width: 90%;
     display: block;
-    margin: auto;
     padding-top: 50px;
     }
     .about-content-section{
-    float: none;
     width: 100%;
     display: block;
-    margin: auto;
+    margin-top: 7vh;
+    padding-right: 0px;
     }
     .image-section {
-    padding-top: 25px;
     float: none;
     width: 100%;
     display: flex;
     justify-content: center;
+    height: auto;
+    padding-top: 20px;
     }
     .image-section img{
     width: 80%;

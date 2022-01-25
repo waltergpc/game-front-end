@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Loading from '../Components/Loading'
 import { useUser } from '../Context/UserContext'
 
+import '../PagesCss/Signin.css';
+
 const SignIn = () => {
   const { register, login, errorMsg, userLoading } = useUser()
   const [showLogin, setShowLogin] = useState(true)
@@ -37,63 +39,78 @@ const SignIn = () => {
   if (userLoading) return <Loading />
 
   return (
-    <section>
-      <h3>{showLogin ? 'Login' : 'Register'}</h3>
+    <div className='container'>
+      <div className='error-container'>
       {errorMsg && <div className='error-section'>{errorMsg}</div>}
-      {passwordError && <div>{passwordError}</div>}
-      <p>
-        {showLogin
-          ? 'If you are not registered, register'
-          : 'If you have a user already login'}
-        <button
-          type='button'
-          className='toggle-login'
-          onClick={() => setShowLogin(!showLogin)}
-        >
-          HERE
-        </button>
-      </p>
-      <form onSubmit={submitLogin}>
-        {!showLogin && (
-          <input
-            type='text'
-            name='name'
-            value={newUser.name}
-            placeholder='Enter your name'
-            onChange={handleChange}
-          />
-        )}
-
-        <input
-          type='text'
-          name='nickname'
-          value={newUser.nickname}
-          placeholder='Enter your nickname'
-          onChange={handleChange}
-        />
-        <input
-          type='password'
-          name='password'
-          value={newUser.password}
-          placeholder='Enter your password'
-          onChange={handleChange}
-        />
-        {!showLogin && (
-          <input
-            type='password'
-            name='confirmed-password'
-            value={confirmedPassword}
-            placeholder='confirm your password'
-            onChange={(e) => {
-              setConfirmedPassword(e.target.value)
-            }}
-          />
-        )}
-        <button type='submit' disabled={!newUser.nickname}>
-          Sign in
-        </button>
-      </form>
-    </section>
+      </div>
+      <section className='container-glass'>
+        <h3>{showLogin ? 'Log In' : 'Register'}</h3>
+        {passwordError && <div>{passwordError}</div>}
+        
+          <form onSubmit={submitLogin} className='input-container'>
+            {!showLogin && (
+              <input
+                className='input-style'
+                type='text'
+                name='name'
+                value={newUser.name}
+                placeholder='Enter your name'
+                onChange={handleChange}
+              />
+            )}
+            <input
+              className='input-style'
+              type='text'
+              name='nickname'
+              value={newUser.nickname}
+              placeholder='Enter your nickname'
+              onChange={handleChange}
+            />
+            <input
+              className='input-style'
+              type='password'
+              name='password'
+              value={newUser.password}
+              placeholder='Enter your password'
+              onChange={handleChange}
+            />
+            {!showLogin && (
+              <input
+                className='input-style'
+                type='password'
+                name='confirmed-password'
+                value={confirmedPassword}
+                placeholder='Confirm your password'
+                onChange={(e) => {
+                  setConfirmedPassword(e.target.value)
+                }}
+              />
+              )}
+              <div className='button-container'>
+              <button 
+              className='button-style'
+              type='submit' 
+              disabled={!newUser.nickname}
+              >
+                Log In
+              </button>
+              </div>
+          </form>
+          <div className='if-registered'>
+          <p>
+            <button
+              type='button'
+              className='toggle-login if-registered-button'
+              onClick={() => setShowLogin(!showLogin)}
+              >
+              {showLogin
+                ? 'Create account'
+                : 'Already have an account ?'}
+            </button>
+          </p>
+          </div>
+      </section>
+    </div>
   )
 }
 
