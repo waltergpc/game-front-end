@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from 'react'
-import Loading from '../Components/Loading'
-import Pagination from '../Components/Pagination'
-import SearchBar from '../Components/SearchBar'
-import { usePlayers } from '../Context/PlayerContext'
+import React, { useEffect, useState } from "react";
+import Loading from "../Components/Loading";
+import Pagination from "../Components/Pagination";
+import SearchBar from "../Components/SearchBar";
+import { usePlayers } from "../Context/PlayerContext";
 
-import '../PagesCss/Players.css'
+import "../PagesCss/Players.css";
 
 const Players = () => {
   const {
@@ -14,40 +14,82 @@ const Players = () => {
     isPlayersLoading,
     totalCount,
     errorMsg,
-  } = usePlayers()
-  const [page, setPage] = useState(1)
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5)
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
-  const [searchUrl, setSearchUrl] = useState(null)
+  } = usePlayers();
+  const [page, setPage] = useState(1);
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
+  const [searchUrl, setSearchUrl] = useState(null);
 
   useEffect(() => {
     if (!searchUrl) {
-      fetchPlayers(page)
+      fetchPlayers(page);
     }
     if (searchUrl) {
-      searchPlayers(searchUrl, page)
+      searchPlayers(searchUrl, page);
     }
 
     //eslint-disable-next-line
-  }, [page, searchUrl])
+  }, [page, searchUrl]);
 
-  if (isPlayersLoading) return <Loading />
+  if (isPlayersLoading) return <Loading />;
 
   const resetPlayers = () => {
-    setSearchUrl(null)
-    setPage(1)
-  }
+    setSearchUrl(null);
+    setPage(1);
+  };
 
   return (
-  
-    <div className='player-container'>
-      <div className='player-lil-container'>
-        <div className='button-all-players-container'>
-          <button className='button-all-players' type='button' onClick={resetPlayers}>
+    <div className="player-container">
+      {errorMsg && <section className="error-msg">{errorMsg}</section>}
+      <div className="table-container">
+        <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
+        <div className="players-table">
+          <table>
+            <thead>
+              <tr className="header">
+                <th>Avatar</th>
+                <th>Nickname</th>
+                <th>Name</th>
+                <th>Ranking</th>
+                <th>Status</th>
+                <th>Player ID</th>
+              </tr>
+            </thead>
+            <tbody>
+              {players.map((player) => (
+                <tr>
+                  <td>
+                    <img
+                      className="image-profile"
+                      src={player.avatar}
+                      alt={player.nickname}
+                    />
+                  </td>
+                  <td>{player.nickname}</td>
+                  <td>{player.name}</td>
+                  <td>{player.ranking}</td>
+                  <td>
+                    {player.status === "oro"
+                      ? "Gold"
+                      : player.status === "plata"
+                      ? "Silver"
+                      : "Bronze"}
+                  </td>
+                  <td>{player._id}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <div className="button-all-players-container">
+          <button
+            className="button-all-players"
+            type="button"
+            onClick={resetPlayers}
+          >
             Back to All Players
           </button>
         </div>
-        <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
         <Pagination
           totalCount={totalCount}
           page={page}
@@ -57,35 +99,9 @@ const Players = () => {
           setMinPageNumberLimit={setMinPageNumberLimit}
           changePage={setPage}
         />
-        {errorMsg && <section className='error-msg'>{errorMsg}</section>}
-        {players.map((player) => {
-          const {
-            _id: playerId,
-            nickname,
-            name,
-            status,
-            ranking,
-            avatar,
-          } = player
-          return (
-            <div className='specs-profile'>
-              <article key={playerId}>
-                <div>{nickname}</div>
-                <div>{name}</div>
-                <div>{ranking}</div>
-                <div>{status}</div>
-                <img 
-                  className='image-profile' 
-                  src={avatar} 
-                  alt={nickname} 
-                />
-              </article>
-            </div>
-          )
-        })}
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Players
+export default Players;
