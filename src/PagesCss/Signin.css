@@ -9,7 +9,7 @@
   flex-direction: column;
   display: flex;
   justify-content: center;
-  background-image: url(../images/UniverseGods7.jpg);
+  background-image: url('../images/UniverseGods7.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -93,6 +93,9 @@ h3 {
   font-weight: normal;
   color: #fff;
   transition: all 0.05s ease-out;
+}
+.button-style:disabled {
+  opacity: 0.6;
 }
 .if-registered {
   height: 30%;

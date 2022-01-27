@@ -1,10 +1,10 @@
-import React, { useEffect, useState } from "react";
-import Loading from "../Components/Loading";
-import Pagination from "../Components/Pagination";
-import SearchBar from "../Components/SearchBar";
-import { usePlayers } from "../Context/PlayerContext";
+import React, { useEffect, useState } from 'react'
+import Loading from '../Components/Loading'
+import Pagination from '../Components/Pagination'
+import SearchBar from '../Components/SearchBar'
+import { usePlayers } from '../Context/PlayerContext'
 
-import "../PagesCss/Players.css";
+import '../PagesCss/Players.css'
 
 const Players = () => {
   const {
@@ -14,42 +14,42 @@ const Players = () => {
     isPlayersLoading,
     totalCount,
     errorMsg,
-  } = usePlayers();
-  const [page, setPage] = useState(1);
-  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5);
-  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0);
-  const [searchUrl, setSearchUrl] = useState(null);
+  } = usePlayers()
+  const [page, setPage] = useState(1)
+  const [maxPageNumberLimit, setMaxPageNumberLimit] = useState(5)
+  const [minPageNumberLimit, setMinPageNumberLimit] = useState(0)
+  const [searchUrl, setSearchUrl] = useState(null)
 
   useEffect(() => {
     if (!searchUrl) {
-      fetchPlayers(page);
+      fetchPlayers(page)
     }
     if (searchUrl) {
-      searchPlayers(searchUrl, page);
+      searchPlayers(searchUrl, page)
     }
 
     //eslint-disable-next-line
-  }, [page, searchUrl]);
+  }, [page, searchUrl])
 
-  if (isPlayersLoading) return <Loading />;
+  if (isPlayersLoading) return <Loading />
 
   const resetPlayers = () => {
-    setSearchUrl(null);
-    setPage(1);
-  };
+    setSearchUrl(null)
+    setPage(1)
+  }
 
   return (
-    <div className="player-container">
-      {errorMsg && <section className="error-msg">{errorMsg}</section>}
-      <div className="table-container">
-        <div className="searchBar-div">
+    <div className='player-container'>
+      {errorMsg && <section className='error-msg'>{errorMsg}</section>}
+      <div className='table-container'>
+        <div className='searchBar-div'>
           <SearchBar
-            className="searchBar-style"
+            className='searchBar-style'
             setPage={setPage}
             setSearchUrl={setSearchUrl}
           />
         </div>
-        <div className="players-table">
+        <div className='players-table'>
           <table>
             <thead>
               <tr>
@@ -63,10 +63,10 @@ const Players = () => {
             </thead>
             <tbody>
               {players.map((player) => (
-                <tr>
+                <tr key={player._id}>
                   <td>
                     <img
-                      className="image-profile"
+                      className='image-profile'
                       src={player.avatar}
                       alt={player.nickname}
                     />
@@ -75,11 +75,11 @@ const Players = () => {
                   <td>{player.name}</td>
                   <td>{player.ranking}</td>
                   <td>
-                    {player.status === "oro"
-                      ? "Gold"
-                      : player.status === "plata"
-                      ? "Silver"
-                      : "Bronze"}
+                    {player.status === 'oro'
+                      ? 'Gold'
+                      : player.status === 'plata'
+                      ? 'Silver'
+                      : 'Bronze'}
                   </td>
                   <td>{player._id}</td>
                 </tr>
@@ -87,10 +87,10 @@ const Players = () => {
             </tbody>
           </table>
         </div>
-        <div className="button-all-players-container">
+        <div className='button-all-players-container'>
           <button
-            className="button-all-players"
-            type="button"
+            className='button-all-players'
+            type='button'
             onClick={resetPlayers}
           >
             Back to All Players
@@ -107,7 +107,7 @@ const Players = () => {
         />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Players;
+export default Players
