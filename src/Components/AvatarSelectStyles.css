@@ -1,14 +1,21 @@
 .avatar-select-div {
+  height: 100%;
+  padding: 3.5rem;
+}
+.avatar-select-glass-div {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(3.3px);
   display: flex;
-  flex-direction: row;
   justify-content: space-evenly;
-  padding: 1rem;
+  width: 100%;
+  padding: 1.5rem 0 1.5rem 0;
+  border-radius: 2rem;
 }
 
 .avatar-option {
-  height: 5rem;
-  width: 5rem;
-  background-color: white;
+  height: 7rem;
+  width: 7rem;
+  background-color: rgb(165, 162, 162);
   border-radius: 50%;
   overflow: hidden;
   cursor: pointer;
@@ -24,5 +31,19 @@
 }
 
 .current {
-  border: rgb(7, 7, 108) 5px solid;
+  border: chartreuse 5px solid;
+}
+
+@media (max-width: 900px) {
+  .avatar-select-div {
+    padding: 2rem;
+  }
+  .avatar-select-glass-div {
+    flex-wrap: wrap;
+  }
+  .avatar-option {
+    height: 4.5rem;
+    width: 4.5rem;
+    margin: 1rem 1rem;
+  }
 }
