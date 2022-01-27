@@ -1,0 +1,50 @@
+/* ---------------Select CSS-------------------- */
+.select {
+  background-color: #1c1a1a;
+  color: #fff;
+  font-size: 16px;
+  height: 2rem;
+  border: none;
+}
+.select:focus {
+  outline: none;
+}
+/* -------------Input Box CSS-------------------- */
+.input-searchBar {
+  height: 2rem;
+  width: 15rem;
+  padding: 0.4rem 0 0.3rem 0;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border: none;
+  outline: none;
+  color: #fff;
+  backdrop-filter: blur(3.3px);
+}
+.input-searchBar:focus {
+  backdrop-filter: blur(12rem);
+  border: 0.1px solid #fff;
+}
+.input-searchBar::placeholder {
+  color: #fff;
+  font-weight: normal;
+  font-size: 15px;
+  padding-left: 0.3rem;
+}
+/* ----------'Search' Button CSS----------------- */
+.button-search {
+  height: 2rem;
+  background-color: #1c1a1a;
+  color: #fff;
+  border: none;
+  padding: 0.25rem;
+  font-size: 16px;
+  border-radius: 0 2rem 2rem 0;
+  border: 0.2px solid #1c1a1a;
+}
+.button-search:hover {
+  border: 0.2px solid #fff;
+  font-weight: normal;
+  color: #fff;
+  transition: all 0.05s ease-out;
+}

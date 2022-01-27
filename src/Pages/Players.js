@@ -42,11 +42,17 @@ const Players = () => {
     <div className="player-container">
       {errorMsg && <section className="error-msg">{errorMsg}</section>}
       <div className="table-container">
-        <SearchBar setPage={setPage} setSearchUrl={setSearchUrl} />
+        <div className="searchBar-div">
+          <SearchBar
+            className="searchBar-style"
+            setPage={setPage}
+            setSearchUrl={setSearchUrl}
+          />
+        </div>
         <div className="players-table">
           <table>
             <thead>
-              <tr className="header">
+              <tr>
                 <th>Avatar</th>
                 <th>Nickname</th>
                 <th>Name</th>
