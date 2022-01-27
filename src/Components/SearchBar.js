@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import "./SearchBar.css";
+
 const SearchBar = ({ setPage, setSearchUrl }) => {
   const [query, setQuery] = useState({ nickname: "", status: "All" });
 
@@ -27,6 +29,7 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
     <>
       <form id="search-bar" onSubmit={handleSubmit}>
         <select
+          className="select"
           id="status-select"
           name="status"
           value={query.status}
@@ -46,6 +49,7 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
           </option>
         </select>
         <input
+          className="input-searchBar"
           type="text"
           placeholder="Search by nickname"
           id="nickname-input"
@@ -53,7 +57,7 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
           value={query.nickname}
           onChange={handleQueryChange}
         />
-        <button id="submit-query-btn" type="submit">
+        <button className="button-search" id="submit-query-btn" type="submit">
           Search
         </button>
       </form>
