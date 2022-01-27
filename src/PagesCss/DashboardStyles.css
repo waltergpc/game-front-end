@@ -1,0 +1,42 @@
+.user-card {
+  margin: 6rem 2rem 4rem 2rem;
+  color: white;
+  display: grid;
+  padding-top: 5rem;
+  justify-items: center;
+  text-align: center;
+  padding: 3rem;
+  gap: 2rem;
+  background-color: rgba(68, 159, 219, 0.24);
+  border-radius: 2rem;
+}
+
+.avatar-div {
+  background-color: grey;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.field {
+  display: flex;
+  justify-content: space-around;
+}
+
+.to-update {
+  border: 2px solid greenyellow;
+  padding: 1rem;
+  font-weight: bold;
+  border-radius: 1rem;
+  transition: 0.2s all linear;
+}
+
+.to-update:hover {
+  background-color: greenyellow;
+  color: black;
+}
+
+@media (min-width: 900px) {
+  .user-card {
+    margin: 7rem 4rem 7rem 4rem;
+  }
+}

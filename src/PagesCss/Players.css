@@ -6,8 +6,9 @@
 .player-container {
   height: 100vh;
   width: 100%;
-  background-image: url("../images/UniverseGods6.jpg");
+  background-image: url('../images/UniverseGods6.jpg');
   background-position: center;
+  color: white;
 }
 /*--------------------- Table CSS--------------------------- */
 .table-container {
