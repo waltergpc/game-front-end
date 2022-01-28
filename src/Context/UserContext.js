@@ -28,7 +28,7 @@ export const UserProvider = ({ children }) => {
     setLoading()
     try {
       const { data } = await axios.post(
-        'http://localhost:5000/api/auth/register',
+        'http://18.209.14.86:5000/api/auth/register',
         { ...user }
       )
       dispatch({ type: 'REGISTER_SUCCESS', payload: data.user })
@@ -46,7 +46,7 @@ export const UserProvider = ({ children }) => {
     setLoading()
     try {
       const { data } = await axios.post(
-        'http://localhost:5000/api/auth/login',
+        'http://18.209.14.86:5000/api/auth/login',
         { ...user }
       )
       dispatch({ type: 'REGISTER_SUCCESS', payload: data.user })
@@ -73,7 +73,7 @@ export const UserProvider = ({ children }) => {
     setLoading()
     try {
       const { data } = await axios.patch(
-        `http://localhost:5000/api/players/${id}`,
+        `http://18.209.14.86:5000/api/players/${id}`,
         {
           ...user,
         }

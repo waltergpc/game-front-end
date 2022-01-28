@@ -13,7 +13,7 @@ const HallFame = () => {
       setLoading(true)
       try {
         const { data } = await axios.get(
-          'http://localhost:5000/api/players/top-players'
+          'http://18.209.14.86:5000/api/players/top-players'
         )
 
         setHof(data.players)
