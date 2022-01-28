@@ -1,0 +1,105 @@
+.updateUser-container {
+  height: 100vh;
+  background-image: url('../../images/UniverseGods7.jpg');
+  background-size: cover;
+  background-position-x: center;
+  width: 100%;
+  padding-top: 7rem;
+}
+.section-div {
+  width: 100%;
+  text-align: center;
+}
+.update-form {
+  padding: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.div-inside-form {
+  justify-content: space-evenly;
+  width: 100%;
+}
+.name-input {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2rem;
+  width: 20rem;
+  font-size: 1rem;
+  font-weight: lighter;
+  margin-right: 1rem;
+  height: 1.5rem;
+  padding: 0.5rem;
+  border: none;
+  color: #fff;
+}
+.name-input:focus {
+  border: #61a899 solid 1.5px;
+  outline: none;
+}
+/* -------------Nickname Input CSS-------------------- */
+.nickname-input {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2rem;
+  font-size: 1rem;
+  width: 20rem;
+  font-weight: lighter;
+  height: 1.5rem;
+  padding: 0.5rem;
+  margin-left: 1rem;
+  border: none;
+  color: #fff;
+}
+.nickname-input:focus {
+  border: #61a899 solid 1.5px;
+  outline: none;
+}
+/* -------------Update button and Link-div CSS-------------------- */
+
+/* background-color: chartreuse; */
+
+.update-btn {
+  background-color: #1c1b1b;
+  color: #fff;
+  border: none;
+  border-radius: 2rem;
+  font-size: 1rem;
+  height: 1.8rem;
+  width: 8rem;
+  margin-bottom: 1.5rem;
+}
+.update-btn:hover {
+  border: 2px solid #000;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  transition: all 0.05s ease-out;
+}
+.link-div {
+  color: #fff;
+  width: 100%;
+}
+.link {
+  background-color: #1c1b1b;
+  padding: 0.3rem 0.7rem 0.3rem 0.7rem;
+  border-radius: 2rem;
+}
+.link:hover {
+  border: 2px solid #000;
+  font-weight: bold;
+  color: #000;
+  background-color: #fff;
+  transition: all 0.05s ease-out;
+}
+
+@media (max-width: 900px) {
+  .update-form {
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  .name-input,
+  .nickname-input {
+    width: 60%;
+    margin: 1rem;
+  }
+}

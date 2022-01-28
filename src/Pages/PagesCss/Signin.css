@@ -1,0 +1,160 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  background-image: url('../../images/UniverseGods7.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+.error-container {
+  display: flex;
+  justify-content: center;
+}
+.container-glass {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  width: 40vw;
+  height: 60vh;
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(8.3px);
+  -webkit-backdrop-filter: blur(00.3px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  margin: 30px auto;
+}
+
+h3 {
+  font-size: 50px;
+  margin-top: 15px;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height: 50%;
+  width: 100%;
+}
+.input-style {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  border-radius: 2rem;
+  width: 80%;
+  height: 1.5rem;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+}
+.input-style:focus {
+  display: inline-block;
+  box-shadow: 0 0 0 0.2rem #61a899;
+  backdrop-filter: blur(12rem);
+}
+.input-style::placeholder {
+  color: #18424e;
+  font-weight: 100;
+  font-size: 1rem;
+}
+.button-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-style {
+  background: linear-gradient(to right, #0f2f3a 0%, #285e60 79%);
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  width: 62%;
+  height: 1.8rem;
+  border: none;
+  color: #fff;
+  border-radius: 2rem;
+  cursor: pointer;
+  font-size: 15px;
+}
+.button-style:hover {
+  border: 2px solid #fff;
+  font-weight: normal;
+  color: #fff;
+  transition: all 0.05s ease-out;
+}
+.button-style:disabled {
+  opacity: 0.6;
+}
+.if-registered {
+  height: 30%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.if-registered-button {
+  width: 110%;
+  cursor: pointer;
+  border-radius: 2rem;
+  border: none;
+  color: #0f2f3a;
+  border: 1px solid #0f2f3a;
+  background: rgba(255, 255, 255, 0.25);
+  font-weight: bolder;
+}
+.if-registered-button:hover {
+  background: linear-gradient(to right, #0f2f3a 0%, #285e60 79%);
+  font-weight: lighter;
+  color: #fff;
+  transition: all 0.05s ease-out;
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    height: 100vh;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    background-image: url('../../images/UniverseGods7.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position-x: center;
+  }
+  .container-glass {
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    width: 283px;
+    height: 60vh;
+    background: rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(8.3px);
+    -webkit-backdrop-filter: blur(00.3px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    margin: 30px auto;
+  }
+  .error-section {
+    background-color: #fff7839e;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    color: #885a08;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 5vh;
+    width: 250px;
+  }
+}
