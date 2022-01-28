@@ -50,6 +50,7 @@ const Players = () => {
             setSearchUrl={setSearchUrl}
           />
         </div>
+        <div className='total-count'>Total Results: {totalCount}</div>
         {players.length < 1 ? (
           <h2>No players found</h2>
         ) : (
