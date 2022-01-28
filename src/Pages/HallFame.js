@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
 import Loading from '../Components/Loading'
-import '../PagesCss/HallOfFame.css'
+import './PagesCss/HallOfFame.css'
 
 const HallFame = () => {
   const [hof, setHof] = useState([])

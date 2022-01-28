@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react'
 import Loading from '../Components/Loading'
-import Pagination from '../Components/Pagination'
-import SearchBar from '../Components/SearchBar'
+import Pagination from '../Components/Pagination/Pagination'
+import SearchBar from '../Components/SearchBar/SearchBar'
 import { usePlayers } from '../Context/PlayerContext'
-
-import '../PagesCss/Players.css'
+import './PagesCss/Players.css'
 
 const Players = () => {
   const {

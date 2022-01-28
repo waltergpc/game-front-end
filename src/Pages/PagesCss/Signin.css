@@ -9,7 +9,7 @@
   flex-direction: column;
   display: flex;
   justify-content: center;
-  background-image: url('../images/UniverseGods7.jpg');
+  background-image: url('../../images/UniverseGods7.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
@@ -128,7 +128,7 @@ h3 {
     flex-direction: column;
     display: flex;
     justify-content: center;
-    background-image: url(../images/UniverseGods7.jpg);
+    background-image: url('../../images/UniverseGods7.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position-x: center;

@@ -31,7 +31,6 @@ export const UserProvider = ({ children }) => {
         'http://localhost:5000/api/auth/register',
         { ...user }
       )
-      console.log(data)
       dispatch({ type: 'REGISTER_SUCCESS', payload: data.user })
       localStorage.setItem(
         'user',
@@ -50,7 +49,6 @@ export const UserProvider = ({ children }) => {
         'http://localhost:5000/api/auth/login',
         { ...user }
       )
-      console.log(data)
       dispatch({ type: 'REGISTER_SUCCESS', payload: data.user })
       localStorage.setItem(
         'user',
@@ -80,7 +78,6 @@ export const UserProvider = ({ children }) => {
           ...user,
         }
       )
-      console.log(data.user)
       dispatch({ type: 'UPDATE_USER', payload: data.user })
       localStorage.setItem(
         'user',
