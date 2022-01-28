@@ -91,7 +91,7 @@ const SignIn = () => {
               type='submit'
               disabled={!newUser.nickname}
             >
-              Log In
+              {showLogin ? 'Login' : 'Register'}
             </button>
           </div>
         </form>
@@ -101,8 +101,9 @@ const SignIn = () => {
               type='button'
               className='toggle-login if-registered-button'
               onClick={() => setShowLogin(!showLogin)}
+              id='toggle-forms'
             >
-              {showLogin ? 'Create account' : 'Already have an account ?'}
+              {showLogin ? 'Create account' : 'Already have an account?'}
             </button>
           </p>
         </div>
