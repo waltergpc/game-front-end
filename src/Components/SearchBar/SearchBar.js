@@ -11,7 +11,7 @@ const SearchBar = ({ setPage, setSearchUrl }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    let url = 'http://localhost:5000/api/players/search?'
+    let url = 'http://18.209.14.86:5000/api/players/search?'
     if (query.nickname && query.status === 'All') {
       url = `${url}value=${query.nickname}`
     }
