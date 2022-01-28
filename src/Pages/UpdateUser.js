@@ -49,6 +49,7 @@ const UpdateUser = () => {
         <div className="update-form">
           <form id="update-from" onSubmit={handleSubmit}>
             <input
+              id="nameBox"
               className="name-input"
               type="text"
               name="name"
@@ -57,6 +58,7 @@ const UpdateUser = () => {
               placeholder="Name"
             />
             <input
+              id="nicknameBox"
               className="nickname-input"
               type="text"
               name="nickname"
@@ -68,7 +70,11 @@ const UpdateUser = () => {
               setUpdatedUser={setUpdatedUser}
               updatedUser={updatedUser}
             />
-            <button className="submit-link-div update-btn" type="submit">
+            <button
+              id="updateBtn"
+              className="submit-link-div update-btn"
+              type="submit"
+            >
               Update
             </button>
           </form>
@@ -77,6 +83,7 @@ const UpdateUser = () => {
           <br />
           <div className="submit-link-div link-div">
             <Link
+              id="profileBtn"
               className="submit-link-div link-div link"
               to="/dashboard"
               onClick={startUpdate}

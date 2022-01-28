@@ -12,17 +12,21 @@ export const HomeSection = () => {
     <div className="home-container">
       <h1>FIGHT FOR THE UNIVERSE</h1>
       <p>The power is yours</p>
-      <div className="home-btns">
+      <div className="home-btn">
         {!user ? (
           <Button
-            className="btns"
+            className="getstarted-btn"
             buttonStyle="btn--outline"
             buttonSize="btn--large"
           >
             GET STARTED
           </Button>
         ) : (
-          <Link to="/dashboard">My Hero</Link>
+          <div className="link-myhero-div">
+            <Link className="link-myhero" to="/dashboard">
+              My Hero
+            </Link>
+          </div>
         )}
       </div>
     </div>
