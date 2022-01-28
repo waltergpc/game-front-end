@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { useUser } from '../Context/UserContext'
-import { Button } from './Button'
+import { useUser } from '../../Context/UserContext'
+import { Button } from '../Button/Button'
 
 import './Navbar.css'
 
@@ -16,6 +16,7 @@ export const Navbar = ({ children }) => {
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
+      console.log(button)
       setButton(false)
       setNavOpen(false)
     } else {

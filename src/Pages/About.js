@@ -1,5 +1,5 @@
 import React from 'react'
-import { AboutSection } from '../Components/AboutSection';
+import { AboutSection } from '../Components/AboutSection/AboutSection'
 
 const About = () => {
   return (
@@ -9,4 +9,4 @@ const About = () => {
   )
 }
 
-export default About;
+export default About
