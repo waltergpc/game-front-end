@@ -6,17 +6,18 @@ import { Button } from './Button'
 import './Navbar.css'
 
 export const Navbar = ({ children }) => {
-  const [click, setClick] = useState(false)
+  const [navOpen, setNavOpen] = useState(false)
   const [button, setButton] = useState(true)
 
   const { user } = useUser()
 
-  const handleClick = () => setClick(!click)
-  const closeMobileMenu = () => setClick(false)
+  const handleClick = () => setNavOpen(!navOpen)
+  const closeMobileMenu = () => setNavOpen(false)
 
   const showButton = () => {
     if (window.innerWidth <= 960) {
       setButton(false)
+      setNavOpen(false)
     } else {
       setButton(true)
     }
@@ -32,10 +33,10 @@ export const Navbar = ({ children }) => {
             Universe Gods <i className='fas fa-globe-americas' />
           </Link>
           <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+            <i className={navOpen ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul
-            className={click ? 'nav-menu active' : 'nav-menu'}
+            className={navOpen ? 'nav-menu active' : 'nav-menu'}
             onClick={closeMobileMenu}
           >
             <li className='nav-item'>

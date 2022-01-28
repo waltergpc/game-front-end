@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Questrial&family=Raleway:wght@300&display=swap');
 
+a:visited,
+a:link {
+  color: white;
+}
+
 .navbar {
   background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   font-family: 'Raleway', sans-serif;
@@ -56,6 +61,7 @@
   padding: 0rem 1rem;
   height: 95%;
 }
+
 .nav-links:hover {
   border-bottom: 4px solid #fff;
   transition: all 0.2s ease-out;

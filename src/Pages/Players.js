@@ -35,6 +35,8 @@ const Players = () => {
 
   const resetPlayers = () => {
     setSearchUrl(null)
+    setMaxPageNumberLimit(5)
+    setMinPageNumberLimit(0)
     setPage(1)
   }
 
@@ -49,44 +51,49 @@ const Players = () => {
             setSearchUrl={setSearchUrl}
           />
         </div>
-        <div className='players-table'>
-          <table>
-            <thead>
-              <tr>
-                <th>Avatar</th>
-                <th>Nickname</th>
-                <th>Name</th>
-                <th>Ranking</th>
-                <th>Status</th>
-                <th>Player ID</th>
-              </tr>
-            </thead>
-            <tbody>
-              {players.map((player) => (
-                <tr key={player._id}>
-                  <td>
-                    <img
-                      className='image-profile'
-                      src={player.avatar}
-                      alt={player.nickname}
-                    />
-                  </td>
-                  <td>{player.nickname}</td>
-                  <td>{player.name}</td>
-                  <td>{player.ranking}</td>
-                  <td>
-                    {player.status === 'oro'
-                      ? 'Gold'
-                      : player.status === 'plata'
-                      ? 'Silver'
-                      : 'Bronze'}
-                  </td>
-                  <td>{player._id}</td>
+        {players.length < 1 ? (
+          <h2>No players found</h2>
+        ) : (
+          <div className='players-table'>
+            <table>
+              <thead>
+                <tr>
+                  <th>Avatar</th>
+                  <th>Nickname</th>
+                  <th>Name</th>
+                  <th>Ranking</th>
+                  <th>Status</th>
+                  <th>Player ID</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
+              </thead>
+              <tbody>
+                {players.map((player) => (
+                  <tr key={player._id}>
+                    <td>
+                      <img
+                        className='image-profile'
+                        src={player.avatar}
+                        alt={player.nickname}
+                      />
+                    </td>
+                    <td>{player.nickname}</td>
+                    <td>{player.name}</td>
+                    <td>{player.ranking}</td>
+                    <td>
+                      {player.status === 'oro'
+                        ? 'Gold'
+                        : player.status === 'plata'
+                        ? 'Silver'
+                        : 'Bronze'}
+                    </td>
+                    <td>{player._id}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+
         <div className='button-all-players-container'>
           <button
             className='button-all-players'
