@@ -1,4 +1,133 @@
+.myhero-container {
+  background-image: url(../images/UniverseGods7.jpg);
+  background-size: cover;
+  background-position-x: center;
+  height: 100vh;
+  width: 100%;
+  padding-top: 8rem;
+  display: flex;
+  justify-content: center;
+}
+/* ------------------Glass Container----------------- */
 .user-card {
+  height: 75vh;
+  width: 25%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8.3px);
+  border-radius: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+/* -------------------Avatar CSS--------------------- */
+.avatar-div {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 1rem;
+}
+.avatar-pic {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  border: greenyellow 2px solid;
+  width: 55%;
+}
+/* ------------------User Info div css------------------ */
+.user-info-div {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8.3px);
+  border-radius: 2rem;
+  height: 50%;
+  width: 95%;
+  padding-top: 1rem;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  border: 2px solid greenyellow;
+}
+/* ----------User Name------------- */
+.user-name-h4 {
+  padding-top: 1rem;
+}
+.span-user {
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+/* ----------User Nickname----------- */
+.user-nickname {
+  padding-top: 1rem;
+}
+.span-nickname {
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+/* ------------User Status------------ */
+.user-status {
+  padding-top: 1rem;
+}
+.span-nickname {
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+/* -------------User Ranking----------- */
+.user-ranking {
+  padding-top: 1rem;
+}
+.span-ranking {
+  font-weight: lighter;
+  padding-left: 1rem;
+}
+/* ----------------User Id-------------- */
+.user-id {
+  padding-top: 1rem;
+}
+.span-id {
+  font-weight: lighter;
+  padding-left: 1rem;
+  font-size: 1.2rem;
+}
+/* ----------------Update Links----------- */
+.to-update-div {
+  border-radius: 2rem;
+  color: #fff;
+  padding-bottom: 1rem;
+}
+.to-update-link {
+  border: silver solid 1px;
+  border-radius: 2rem;
+  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+}
+.to-update-div:hover {
+  border-radius: 2rem;
+  color: yellowgreen;
+  padding-bottom: 1rem;
+}
+.to-update-link:hover {
+  border: yellowgreen solid 2px;
+  border-radius: 2rem;
+  padding: 0.2rem 0.6rem 0.2rem 0.6rem;
+}
+@media screen and (max-width: 960px) {
+  .user-card {
+    height: 75vh;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .user-info-div {
+    border-radius: 2rem;
+    height: 50%;
+    width: 95%;
+    padding-top: 0.1rem;
+    padding-left: 1.5rem;
+  }
+}
+/* .user-card {
   margin: 6rem 2rem 4rem 2rem;
   color: white;
   display: grid;
@@ -9,34 +138,36 @@
   gap: 2rem;
   background-color: rgba(68, 159, 219, 0.24);
   border-radius: 2rem;
-}
+} */
 
-.avatar-div {
+/* .avatar-div {
   background-color: grey;
   border-radius: 50%;
   overflow: hidden;
-}
+} */
 
-.field {
+/* .field {
   display: flex;
   justify-content: space-around;
-}
+} */
 
-.to-update {
+/* .to-update {
   border: 2px solid greenyellow;
   padding: 1rem;
   font-weight: bold;
   border-radius: 1rem;
   transition: 0.2s all linear;
-}
+} */
 
-.to-update:hover {
+/* .to-update:hover {
   background-color: greenyellow;
   color: black;
-}
+} */
 
-@media (min-width: 900px) {
+/* @media (min-width: 900px) {
   .user-card {
     margin: 7rem 4rem 7rem 4rem;
   }
-}
+} */
+
+/* ----------------Ulises CSS---------------- */
