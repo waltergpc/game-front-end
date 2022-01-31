@@ -34,12 +34,13 @@ const Pagination = ({
   }
 
   return (
-    <div className='page-numbers'>
+    <div className='page-numbers' id='pagination-btns'>
       <button
         type='button'
         className='page-btn prev-btn'
         onClick={handlePrevClick}
         disabled={page === 1}
+        id='prev-btn'
       >
         Prev
       </button>
@@ -51,6 +52,7 @@ const Pagination = ({
               type='button'
               className={page === number ? 'page-btn active' : 'page-btn'}
               key={number}
+              id={`page-${number}-btn`}
               onClick={(e) => changePage(Number(e.target.textContent))}
             >
               {number}
@@ -67,6 +69,7 @@ const Pagination = ({
         type='button'
         className='page-btn nxt-btn'
         onClick={handleNextClick}
+        id='prev-btn'
         disabled={page === pages[pages.length - 1] || pages.length < 1}
       >
         Next

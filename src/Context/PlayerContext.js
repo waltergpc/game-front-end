@@ -25,7 +25,7 @@ export const PlayerProvider = ({ children }) => {
     setLoading()
     try {
       const { data } = await axios.get(
-        `http://localhost:5000/api/players?page=${page}`
+        `http://18.209.14.86:5000/api/players?page=${page}`
       )
       dispatch({ type: 'FETCH_PLAYERS', payload: data })
     } catch (error) {
